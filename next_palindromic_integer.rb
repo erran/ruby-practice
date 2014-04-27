@@ -3,7 +3,7 @@ module PalindromeHelpers
 
   def is_palindrome?(obj)
     # NOTE: In Ruby 2.x String#chars already returns an array
-    chars = obj.to_s.downcase.chars.to_a.grep(/[[:alnum]]]/)
+    chars = obj.to_s.downcase.chars.to_a.grep(/[[:alnum]]/)
     chars == chars.reverse
   end
 
