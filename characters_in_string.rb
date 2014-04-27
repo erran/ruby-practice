@@ -1,4 +1,4 @@
-# Extracts the char
+# Extracts the common characters from in two strings
 def common_characters(str1, str2)
   # NOTE: In Ruby 2.x chars returns an Array not an Enumerator like theReq's REPL
   chars1 = str1.chars.to_a
