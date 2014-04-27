@@ -1,18 +1,24 @@
 module FixnumExtensions
-  def pi
-    Float('%.2f' % Math::PI)
+  module ClassMethods
+    def pi
+      Float('%.2f' % Math::PI)
+    end
   end
-end
 
-module MathExtensions
-  def squared
-    self**2
+  module InstanceMethods
+    def squared
+      self**2
+    end
+  end
+  
+  def self.included(base)
+    base.extend ClassMethods
+    base.send(:include, InstanceMethods)
   end
 end
 
 class Fixnum
-  include MathExtensions
-  extend FixnumExtensions
+  include FixnumExtensions
 end
 
 p Fixnum.pi
