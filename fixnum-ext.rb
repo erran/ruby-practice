@@ -1,7 +1,7 @@
 module FixnumExtensions
   module ClassMethods
     def pi
-      Float('%.2f' % Math::PI)
+      Math::PI.round(2)
     end
   end
 
